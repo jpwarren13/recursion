@@ -7,4 +7,8 @@
 var getElementsByClassName = function(className
 ) {
   // your code here
+  var nodes = document.body.children;
+
+console.log(Array.isArray(nodes));
+
 };
