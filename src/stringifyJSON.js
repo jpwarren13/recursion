@@ -23,7 +23,7 @@ var stringifyJSON = function(obj) {
 
   } else if (typeof obj === 'object') {
 
-    var stringifiedObject = '';
+    var stringifiedObject = [];
     var j = 0;
 
     if (obj === undefined) {
@@ -33,7 +33,7 @@ var stringifyJSON = function(obj) {
     for (var key in obj) {
       if (typeof obj[key] === 'undefined' || typeof obj[key] === 'function') {
         j++;
-      } else if (j === Object.keys(obj).length -1) {
+      } else if (j === Object.keys(obj).length - 1) {
         stringifiedObject += stringifyJSON(key) + ':' + stringifyJSON(obj[key]);
       } else {
         stringifiedObject += stringifyJSON(key) + ':' + stringifyJSON(obj[key]) + ',';
